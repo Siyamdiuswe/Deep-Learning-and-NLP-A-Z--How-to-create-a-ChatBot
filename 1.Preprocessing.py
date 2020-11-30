@@ -30,7 +30,7 @@ for conversation in conversations_ids:
         questions.append(id2line[conversation[i]])
         answers.append(id2line[conversation[i+1]])
 
-#Doing a first cleaning of the texts
+# Cleaning the text function
 def clean_text(text):
     text = text.lower()
     text = re.sub(r"i'm", "i am", text)
@@ -48,3 +48,15 @@ def clean_text(text):
     text = re.sub(r"\'d", " would", text)
     text = re.sub(r"[-()\"#/@;:<>+-=~|.,?]", "", text)
     return text
+
+
+# Cleaning Questions
+clean_questions = []
+for q in questions:
+    clean_questions.append(clean_text(q))
+
+
+# Cleaning Answers
+clean_answers = []
+for a in answers:
+    clean_answers.append(clean_text(a))
