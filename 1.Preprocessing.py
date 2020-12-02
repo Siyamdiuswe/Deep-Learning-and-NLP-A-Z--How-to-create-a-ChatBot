@@ -7,8 +7,8 @@ import time
 # Preprocessing
 
 #Importing the dataset
-lines = open('movie_lines.txt').read().split('\n')
-conversations = open('movie_conversations.txt').read().split('\n')
+lines = open('C:/Users/Siyam/Desktop/github/Deep-Learning-and-NLP-A-Z--How-to-create-a-ChatBot/movie_lines.txt').read().split('\n')
+conversations = open('C:/Users/Siyam/Desktop/github/Deep-Learning-and-NLP-A-Z--How-to-create-a-ChatBot/movie_conversations.txt').read().split('\n')
 
 #Creating a library that maps each line and it's id
 id2line = {}
@@ -76,6 +76,22 @@ for answer in clean_answers:
             word2count[word] = 1
         else:
             word2count[word] += 1
+            
+#Creating two dictionaries that map the questions words and the answers words
+threshold = 20
+questionsword2int = {}
+word_number = 0
+for word, count in word2count.items():
+     if count >= threshold:
+         questionsword2int[word] = word_number
+         word_number += 1
+
+ansersword2int = {}
+word_number = 0
+for word, count in word2count.items():
+     if count >= threshold:
+         ansersword2int[word] = word_number
+         word_number += 1
             
             
             
