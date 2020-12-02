@@ -100,14 +100,15 @@ for token in tokens:
 
 for token in tokens:
     answersword2int[token] = len(answersword2int)+1
-              
-print(questionsword2int['<PAD>'])
-print(questionsword2int['<EOS>'])
-print(questionsword2int['<OUT>'])
-print(questionsword2int['<SOS>'])
-print("\n")
-print(answersword2int['<PAD>'])
-print(answersword2int['<EOS>'])
-print(answersword2int['<OUT>'])
-print(answersword2int['<SOS>'])     
+ 
+# Creating an inverse dictionary of answersword2int
+answersints2word = {w_i:w for w,w_i in answersword2int.items()}
+
+    
+ 
+    
+ 
+    
+ 
+    
 print("OK!")
