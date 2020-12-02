@@ -104,7 +104,9 @@ for token in tokens:
 # Creating an inverse dictionary of answersword2int
 answersints2word = {w_i:w for w,w_i in answersword2int.items()}
 
-    
+# Adding EOS after the answer
+for i in range(len(clean_answers)):
+    clean_answers[i] += '< EOS>'    
  
     
  
