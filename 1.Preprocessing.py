@@ -86,14 +86,28 @@ for word, count in word2count.items():
          questionsword2int[word] = word_number
          word_number += 1
 
-ansersword2int = {}
+answersword2int = {}
 word_number = 0
 for word, count in word2count.items():
      if count >= threshold:
-         ansersword2int[word] = word_number
+         answersword2int[word] = word_number
          word_number += 1
             
-            
-            
-        
+#Adding the last tokens to these two dictionaries
+tokens = ['<PAD>','<EOS>','<OUT>','<SOS>']
+for token in tokens:
+    questionsword2int[token]=len(questionsword2int)+1
+
+for token in tokens:
+    answersword2int[token] = len(answersword2int)+1
+              
+print(questionsword2int['<PAD>'])
+print(questionsword2int['<EOS>'])
+print(questionsword2int['<OUT>'])
+print(questionsword2int['<SOS>'])
+print("\n")
+print(answersword2int['<PAD>'])
+print(answersword2int['<EOS>'])
+print(answersword2int['<OUT>'])
+print(answersword2int['<SOS>'])     
 print("OK!")
