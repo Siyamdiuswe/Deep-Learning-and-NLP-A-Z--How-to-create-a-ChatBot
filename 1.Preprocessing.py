@@ -155,4 +155,3 @@ for length in range(1, 25 + 1):
             sorted_clean_answers.append(answers_into_int[i[0]])
  
 print("OK!")
-print(questionswords2int['<OUT>'])
